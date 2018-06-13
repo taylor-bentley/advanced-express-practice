@@ -1,9 +1,12 @@
 const express = require("express");
-
-const bodyParser = require("body-parser");
+const mongoose = require("mongoose");
+mongoose.Promise = global.Promise;
+mongoose.connect("mongodb://yoginicodini:1lovecoding@ds257470.mlab.com:57470/express-practice-4");
 const app = express();
-
+const bodyParser = require("body-parser");
 app.use(bodyParser.json());
+
+
 
 let ContactRoutes = require("./routes/ContactRoutes");
 app.use(ContactRoutes);
